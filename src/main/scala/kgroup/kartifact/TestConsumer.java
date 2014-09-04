@@ -29,7 +29,7 @@ public class TestConsumer {
 		Properties props = new Properties();
         props.put("zookeeper.connect", "192.168.23.104:2181");
         props.put("group.id", "1");
-        props.put("zookeeper.session.timeout.ms", "413");
+        props.put("zookeeper.session.timeout.ms", "100000");
         props.put("zookeeper.sync.time.ms", "203");
         props.put("auto.commit.interval.ms", "1000");
         // props.put("auto.offset.reset", "smallest");
