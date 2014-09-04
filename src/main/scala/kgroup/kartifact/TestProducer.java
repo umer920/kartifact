@@ -14,7 +14,7 @@ public class TestProducer {
 	        Properties props = new Properties();
 	        props.put("metadata.broker.list", "208.95.234.50:9092,208.95.234.54:9092 ");
 	        props.put("serializer.class", "kafka.serializer.StringEncoder");
-	        props.put("partitioner.class", "example.producer.SimplePartitioner");
+	        props.put("partitioner.class", "kgroup.kartifact.SimplePartitioner");
 	        props.put("request.required.acks", "1");
 	 
 	        ProducerConfig config = new ProducerConfig(props);
