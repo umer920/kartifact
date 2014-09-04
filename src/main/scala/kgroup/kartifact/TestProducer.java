@@ -26,7 +26,7 @@ public class TestProducer {
 	               String ip = "192.168.2." + rnd.nextInt(255); 
 	               String msg = runtime + ",www.example.com," + ip; 
 	               System.out.println(msg);
-	               KeyedMessage<String, String> data = new KeyedMessage<String, String>("page_visits", ip, msg);
+	               KeyedMessage<String, String> data = new KeyedMessage<String, String>(args[1], ip, msg);
 	               producer.send(data);
 	        }
 	        producer.close();
