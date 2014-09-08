@@ -12,7 +12,7 @@ public class TestProducer {
 	        Random rnd = new Random();
 	 
 	        Properties props = new Properties();
-	        props.put("metadata.broker.list", "208.95.234.50:9092,208.95.234.54:9092,208.95.234.51");
+	        props.put("metadata.broker.list", "208.95.234.50:9092,208.95.234.54:9092,208.95.234.51:9092");
 	        props.put("serializer.class", "kafka.serializer.StringEncoder");
 	        props.put("partitioner.class", "kgroup.kartifact.SimplePartitioner");
 	        props.put("request.required.acks", "1");
