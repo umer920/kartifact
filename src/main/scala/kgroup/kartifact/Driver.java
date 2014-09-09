@@ -26,6 +26,7 @@ public class Driver {
 			params.put("topic", args[2]);
 			params.put("threads", args[3]);
 			consumer.setSource(args[0]+","+args[2]);
+			consumer.fetch(params);
 		}
 
 	}
