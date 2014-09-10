@@ -2,6 +2,8 @@ package kgroup.kartifact;
 
 import java.util.Map;
 
+import kafka.javaapi.producer.Producer;
+
 /**
 * This abstract class forms the basis of all connectors
 * 
@@ -129,6 +131,11 @@ public abstract class Connector {
 
 	public void setCredentials(Map<String, Object> credentials) {
 		this.credentials = credentials;
+	}
+
+	public Producer<String, String> getProducer(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 
