@@ -113,6 +113,7 @@ public class Kafka extends Connector {
 	public boolean put(Map<String, Object> params) {
 		Producer<String, String> producer = getProducer(params.get("brokers").toString());
 		KeyedMessage<String, String> data = new KeyedMessage<String, String>(params.get("topic").toString(), "null", params.get("message").toString());
+		System.out.println();
 		producer.send(data);
 		return true;
 	}

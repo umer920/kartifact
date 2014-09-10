@@ -150,7 +150,7 @@
 
 					<archive>
 						<manifest>
-							<mainClass>com.platalytics.TestPackage.WordCount</mainClass>
+							<mainClass>kgroup.kartifact.Driver</mainClass>
 						</manifest>
 					</archive>
 
