@@ -47,10 +47,10 @@ public class Kafka extends Connector {
         //
         int threadNumber = 0;
         while(true){
-        	for (final KafkaStream stream : streams) {
-        		executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
-        		threadNumber++;
-        	}
+        	//for (final KafkaStream stream : streams) {
+        		executor.execute(new ConsumerTest(streams.get(0), threadNumber,new KafkaReceiver()));
+        		//threadNumber++;
+        	//}
         }
     }
  
