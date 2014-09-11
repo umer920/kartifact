@@ -19,10 +19,8 @@ public class Driver {
 		}
 		else
 		{
-			params.put("zk", args[0]);
-			params.put("group", args[1]);
-			params.put("topic", args[2]);
-			params.put("threads", args[3]);
+			params.put("zk", args[0]);;
+			params.put("topic", args[1]);
 			connect.fetch(params);
 		}
 
