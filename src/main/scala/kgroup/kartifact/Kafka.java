@@ -58,7 +58,7 @@ public class Kafka extends Connector {
         Properties props = new Properties();
         props.put("zookeeper.connect", a_zookeeper);
         props.put("group.id", a_groupId);
-        props.put("zookeeper.session.timeout.ms", "999999");
+        props.put("zookeeper.session.timeout.ms", "400");
         props.put("zookeeper.sync.time.ms", "200");
         props.put("auto.commit.interval.ms", "1000");
  
@@ -117,17 +117,17 @@ public class Kafka extends Connector {
 	@Override
 	public boolean put(Map<String, Object> params) {
 		
-		String [] arguments = new String[8];
-        arguments[0] = "--zookeeper";
-        arguments[1] = "cloud2:2181";
-        arguments[2] = "--replica";
-        arguments[3] = "1";
-        arguments[4] = "--partition";
-        arguments[5] = "1";
-        arguments[6] = "--topic";
-        arguments[7] = params.get("topic").toString();
-
-        CreateTopicCommand.main(arguments);
+//		String [] arguments = new String[8];
+//        arguments[0] = "--zookeeper";
+//        arguments[1] = "cloud2:2181";
+//        arguments[2] = "--replica";
+//        arguments[3] = "1";
+//        arguments[4] = "--partition";
+//        arguments[5] = "1";
+//        arguments[6] = "--topic";
+//        arguments[7] = params.get("topic").toString();
+//
+//        CreateTopicCommand.main(arguments);
 		
 		
 		Producer<String, String> producer = getProducer(params.get("brokers").toString());
