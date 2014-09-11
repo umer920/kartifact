@@ -96,19 +96,22 @@ public class Kafka extends Connector {
         String groupId = "1";
         String topic = params.get("topic").toString();
         
-        setKafkaConsumer(zooKeeper,groupId,topic);
+        while(true)
+        {
+        	setKafkaConsumer(zooKeeper,groupId,topic);
         
-        int threads = 1;
+        	int threads = 1;
         
-        run(threads);
+        	run(threads);
  
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException ie) {
+        	try {
+        		Thread.sleep(10000);
+        	} catch (InterruptedException ie) {
  
+        	}
         }
-        shutdown();
-		return null;
+        //shutdown();
+		//return null;
 	}
 
 	@Override
