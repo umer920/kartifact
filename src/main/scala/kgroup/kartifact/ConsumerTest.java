@@ -18,7 +18,7 @@ public class ConsumerTest implements Runnable {
         ConsumerIterator<byte[], byte[]> it = m_stream.iterator();
         while (it.hasNext())
         {
-        	receiver.DoSomething(it.next().message().toString());
+        	receiver.doSomething(it.next().message().toString());
             System.out.println("Thread " + m_threadNumber + ": " + new String(it.next().message()));
         }
         System.out.println("Shutting down Thread: " + m_threadNumber);

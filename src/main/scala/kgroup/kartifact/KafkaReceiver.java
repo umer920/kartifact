@@ -8,7 +8,7 @@ public class KafkaReceiver {
 	}
 	
 	
-	public void DoSomething(String message)
+	public void doSomething(String message)
 	{
 		
 	}
