@@ -56,7 +56,7 @@ public class Kafka extends Connector {
         Properties props = new Properties();
         props.put("zookeeper.connect", a_zookeeper);
         props.put("group.id", a_groupId);
-        props.put("zookeeper.session.timeout.ms", "9999999999999");
+        props.put("zookeeper.session.timeout.ms", "999999");
         props.put("zookeeper.sync.time.ms", "200");
         props.put("auto.commit.interval.ms", "1000");
  
