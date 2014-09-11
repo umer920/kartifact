@@ -105,7 +105,7 @@ public class Kafka extends Connector {
         	run(threads);
  
         	try {
-        		Thread.sleep(10000);
+        		Thread.sleep(1000000000);
         	} catch (InterruptedException ie) {
  
         	}
