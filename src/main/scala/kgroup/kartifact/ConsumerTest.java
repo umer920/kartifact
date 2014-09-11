@@ -18,8 +18,8 @@ public class ConsumerTest implements Runnable {
         ConsumerIterator<byte[], byte[]> it = m_stream.iterator();
         while (it.hasNext())
         {
-        	receiver.doSomething(it.next().message().toString());
-            System.out.println("key : "+ it.next().key().toString() +" offset " + it.next().offset() + ": " + new String(it.next().message()));
+        	//receiver.doSomething(it.next().message().toString());
+            System.out.println(it.next().offset());
         }
         System.out.println("Shutting down Thread: " + m_threadNumber);
     }
