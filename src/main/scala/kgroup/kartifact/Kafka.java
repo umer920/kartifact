@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import kafka.admin.CreateTopicCommand;
 import kafka.consumer.ConsumerConfig;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
@@ -109,6 +110,20 @@ public class Kafka extends Connector {
 
 	@Override
 	public boolean put(Map<String, Object> params) {
+		
+		String [] arguments = new String[8];
+        arguments[0] = "--zookeeper";
+        arguments[1] = "cloud2:2181";
+        arguments[2] = "--replica";
+        arguments[3] = "1";
+        arguments[4] = "--partition";
+        arguments[5] = "1";
+        arguments[6] = "--topic";
+        arguments[7] = "tcheck";
+
+        CreateTopicCommand.main(arguments);
+		
+		
 		Producer<String, String> producer = getProducer(params.get("brokers").toString());
 		KeyedMessage<String, String> data = new KeyedMessage<String, String>(params.get("topic").toString(), "null", params.get("message").toString());
 		System.out.println();
