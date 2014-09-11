@@ -35,13 +35,13 @@ public class Kafka extends Connector {
  
     public void run(int a_numThreads) {
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
-        topicCountMap.put(topic, new Integer(4));
+        topicCountMap.put(topic, new Integer(a_numThreads));
         Map<String, List<KafkaStream<byte[], byte[]>>> consumerMap = consumer.createMessageStreams(topicCountMap);
         List<KafkaStream<byte[], byte[]>> streams = consumerMap.get(topic);
  
         // now launch all the threads
         //
-        executor = Executors.newFixedThreadPool(4);
+        executor = Executors.newFixedThreadPool(a_numThreads);
  
         // now create an object to consume the messages
         //
