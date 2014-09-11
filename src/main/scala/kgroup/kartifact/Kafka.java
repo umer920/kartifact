@@ -104,11 +104,11 @@ public class Kafka extends Connector {
         
         	run(threads);
  
-        	/*try {
-        		//Thread.sleep(10000);
+        	try {
+        		Thread.sleep(10000);
         	} catch (InterruptedException ie) {
  
-        	}*/
+        	}
         }
         //shutdown();
 		//return null;
