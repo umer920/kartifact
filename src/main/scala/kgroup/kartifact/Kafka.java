@@ -46,12 +46,12 @@ public class Kafka extends Connector {
         // now create an object to consume the messages
         //
         int threadNumber = 0;
-        while(true){
+        //while(true){
         	for (final KafkaStream stream : streams) {
         		executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
         		threadNumber++;
         	}
-        }
+        //}
     }
  
     private static ConsumerConfig createConsumerConfig(String a_zookeeper, String a_groupId) {
