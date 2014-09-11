@@ -41,7 +41,7 @@ public class TestConsumer {
         //
         int threadNumber = 0;
         for (final KafkaStream stream : streams) {
-            executor.submit(new ConsumerTest(stream, threadNumber, new KafkaReceiver()));
+            executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
             threadNumber++;
         }
     }
@@ -50,7 +50,7 @@ public class TestConsumer {
         Properties props = new Properties();
         props.put("zookeeper.connect", a_zookeeper);
         props.put("group.id", a_groupId);
-        props.put("zookeeper.session.timeout.ms", "10000000");
+        props.put("zookeeper.session.timeout.ms", "10000");
         props.put("zookeeper.sync.time.ms", "200");
         props.put("auto.commit.interval.ms", "1000");
  
