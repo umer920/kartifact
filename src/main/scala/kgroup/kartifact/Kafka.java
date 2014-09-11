@@ -87,7 +87,7 @@ public class Kafka extends Connector {
 	}
 
 	@Override
-	public boolean fetch(Map<String, Object> params) {
+	public Object fetch(Map<String, Object> params) {
 		
 		String zooKeeper = params.get("zk").toString(); 
         String groupId = params.get("group").toString();
@@ -96,17 +96,15 @@ public class Kafka extends Connector {
         setKafkaConsumer(zooKeeper,groupId,topic);
         
         int threads = Integer.parseInt(params.get("threads").toString());
-
-        TestConsumer example = new TestConsumer(zooKeeper, groupId, topic);
-        example.run(threads);
+        run(threads);
  
         try {
             Thread.sleep(10000);
         } catch (InterruptedException ie) {
  
         }
-        example.shutdown();
-		return false;
+        shutdown();
+		return null;
 	}
 
 	@Override

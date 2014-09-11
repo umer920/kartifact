@@ -48,7 +48,7 @@ public abstract class Connector {
 	 * @param params Key value pairs pertaining info about data
 	 * @return whether the data fetched and stored successfully
 	 */
-	public abstract boolean fetch(Map<String, Object> params);
+	public abstract Object fetch(Map<String, Object> params);
 
 	/**
 	 * Upload the data from sink to source
