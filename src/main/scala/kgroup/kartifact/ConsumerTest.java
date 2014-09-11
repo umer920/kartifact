@@ -19,7 +19,7 @@ public class ConsumerTest implements Runnable {
         while (it.hasNext())
         {
         	receiver.doSomething(it.next().message().toString());
-            System.out.println("Thread " + m_threadNumber + ": " + new String(it.next().message()));
+            System.out.println("key : "+ it.next().key().toString() +" offset " + it.next().offset() + ": " + new String(it.next().message()));
         }
         System.out.println("Shutting down Thread: " + m_threadNumber);
     }
