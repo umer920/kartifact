@@ -46,9 +46,11 @@ public class Kafka extends Connector {
         // now create an object to consume the messages
         //
         int threadNumber = 0;
-        for (final KafkaStream stream : streams) {
-            executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
-            threadNumber++;
+        while(true){
+        	for (final KafkaStream stream : streams) {
+        		executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
+        		threadNumber++;
+        	}
         }
     }
  
@@ -91,12 +93,13 @@ public class Kafka extends Connector {
 	public Object fetch(Map<String, Object> params) {
 		
 		String zooKeeper = params.get("zk").toString(); 
-        String groupId = params.get("group").toString();
+        String groupId = "1";
         String topic = params.get("topic").toString();
         
         setKafkaConsumer(zooKeeper,groupId,topic);
         
-        int threads = Integer.parseInt(params.get("threads").toString());
+        int threads = 1;
+        
         run(threads);
  
         try {
