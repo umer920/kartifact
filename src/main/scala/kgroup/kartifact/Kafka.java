@@ -47,7 +47,7 @@ public class Kafka extends Connector {
         //
         int threadNumber = 0;
         for (final KafkaStream stream : streams) {
-            executor.submit(new ConsumerTest(stream, threadNumber));
+            executor.submit(new ConsumerTest(stream, threadNumber,new KafkaReceiver()));
             threadNumber++;
         }
     }
@@ -119,7 +119,7 @@ public class Kafka extends Connector {
         arguments[4] = "--partition";
         arguments[5] = "1";
         arguments[6] = "--topic";
-        arguments[7] = "tcheck";
+        arguments[7] = params.get("topic").toString();
 
         CreateTopicCommand.main(arguments);
 		
